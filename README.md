@@ -9,3 +9,5 @@ resulting Wikipedia entries.
 - I can click a button to see a random Wikipedia entry.
 
 Live app at https://user883311.github.io/wikipedia-search/. 
+
+Notes: Used jQuery, FontAwesome. 
