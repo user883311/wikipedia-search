@@ -8,7 +8,6 @@ $(document).ready(function () {
 // Wikipedia search results
 function getApiData(srStr) {
     var result =
-        console.log("calling getResults...");
     // Wikipedia API sandbox @ https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm
     var wikipediaAPI = "https://en.wikipedia.org";
     wikipediaAPI += "/w/api.php?action=opensearch&format=json&search=";
@@ -50,8 +49,12 @@ function getApiData(srStr) {
 
 $(document).ready(function () {
     $("#searchButton").click(function () {
-        var srStr;
-        srStr = document.getElementById("searchInput").value;
-        getApiData(srStr);
+        let f = document.getElementById("searchInput").value;
+        if (f === undefined || f.length === 0) { return 0; }
+        else { getApiData(f); }
     });
+});
+
+$("#searchInput").keypress(function (event) {
+    if (event.which === 13) { $("#searchButton").click(); }
 });
