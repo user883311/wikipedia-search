@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 // Wikipedia search results
 function getApiData(srStr) {
-    var result =
+    reset();
     // Wikipedia API sandbox @ https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm
     var wikipediaAPI = "https://en.wikipedia.org";
     wikipediaAPI += "/w/api.php?action=opensearch&format=json&search=";
@@ -50,6 +50,7 @@ function getApiData(srStr) {
 $(document).ready(function () {
     $("#searchButton").click(function () {
         let f = document.getElementById("searchInput").value;
+        // let srStr = document.getElementById("searchInput").value;
         if (f === undefined || f.length === 0) { return 0; }
         else { getApiData(f); }
     });
@@ -58,3 +59,11 @@ $(document).ready(function () {
 $("#searchInput").keypress(function (event) {
     if (event.which === 13) { $("#searchButton").click(); }
 });
+
+function reset() {
+    // let arr = document.getElementById("results-list").childNodes;
+    var element = document.getElementById("results-list");
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
