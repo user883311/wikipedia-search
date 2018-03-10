@@ -43,6 +43,7 @@ function getApiData(srStr) {
                 strHtmlCode += uniqueResultDiv;
             };
             $("#results-list").append(strHtmlCode);
+            maskLogo();
         },
     });
 };
@@ -66,4 +67,8 @@ function reset() {
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
+}
+
+function maskLogo(){
+    document.getElementById("wiki-logo").classList.add("invisible");
 }

@@ -3,11 +3,27 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: center;
+}
+
+img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+}
+
+.invisible {
+    display: none;
+}
+
+.central-box {
+    margin-top: 30px;
 }
 
 .search-box {
   margin-top: 5px;
+  width: 90%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .btn-group {
@@ -22,6 +38,7 @@ body {
 
 .results-list {
     color: black;
+    
 }
 
 a {
@@ -39,6 +56,7 @@ a:hover {
     margin: 5px;
     padding: 10px;
     display: block;
+    
 }
 
 .unique-result-box:hover {
@@ -52,4 +70,12 @@ a:hover {
 
 .result-description {
     font-size: 14px;
+}
+
+
+/* CSS QUERIES */
+@media (min-width: 450px) {
+    .search-box {
+     width: 400px;   
+    }
 }
