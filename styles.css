@@ -76,6 +76,6 @@ a:hover {
 /* CSS QUERIES */
 @media (min-width: 450px) {
     .search-box {
-     width: 400px;   
+     width: 405px;   
     }
 }
